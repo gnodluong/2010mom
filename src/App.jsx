@@ -136,7 +136,7 @@ export default function App() {
             </div>
             <h2 className="spring-title">
               Vườn hoa
-              <span>con tặng Mẹ</span>
+              <span>Đông tặng Mẹ</span>
             </h2>
           </div>
 
@@ -148,7 +148,7 @@ export default function App() {
                 <FadeLine key={i} text={l.text} size={l.size} special={l.special} gold={l.gold} />
               ))}
               <div className="signature">
-                <p>Con của Mẹ,</p>
+                <p>Thương Mẹ thật nhiều,</p>
                 <p className="sign-name">Đông</p>
                 <p className="sign-date">20 - 10 - 2026</p>
               </div>
