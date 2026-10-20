@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@600;700&display=swap&subset=vietnamese");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #fbe9dc;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  color: #4a2a2a;
+  font-family: "Lora", "Playfair Display", serif;
+  overflow-x: hidden;
+}
+
+/* ===== Bìa: bầu trời bình minh ===== */
+.dawn {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.25rem 6rem;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #9fc9ec 0%, #c9d9ef 28%, #f5d5d0 58%, #fcd9b6 80%, #fde6c8 100%);
+}
+
+.dawn .sky-wisps {
+  top: 0;
+  height: 60vh;
+  opacity: 0.7;
+}
+
+.dawn-sun {
+  position: absolute;
+  left: 50%;
+  bottom: 6vh;
+  width: 46vmin;
+  aspect-ratio: 1;
+  margin-left: -23vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 246, 214, 0.95) 0 22%, rgba(255, 214, 150, 0.6) 40%, rgba(255, 190, 140, 0) 70%);
+  animation: sun-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dawn .sky-clouds img:nth-child(1) { top: 8%; }
+.dawn .sky-clouds img:nth-child(2) { top: 22%; }
+.dawn .sky-clouds img:nth-child(3) { top: 62%; opacity: 0.75; }
+.dawn .sky-clouds img:nth-child(4) { top: 40%; }
+.dawn .sky-clouds img { filter: sepia(0.15) saturate(1.1) hue-rotate(-10deg); }
+
+.dawn-date {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 0.45rem 1.5rem;
+  border-radius: 999px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  letter-spacing: 0.4em;
+  color: #9e0f2d;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(200, 120, 100, 0.3);
+  animation: pop-in 1s cubic-bezier(.2, 1.4, .4, 1) both;
+}
+
+.dawn-title {
+  position: relative;
+  margin: 0;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: clamp(3.6rem, 15vw, 8rem);
+  line-height: 1.1;
+  background: linear-gradient(90deg, #9e0f2d, #c8306f, #d4882a, #c8306f, #9e0f2d);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-flow 9s linear infinite, warm-glow 4s ease-in-out infinite;
+}
+
+.dawn-sub {
+  position: relative;
+  margin: 0.6rem 0 0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: #6b3434;
+}
+
+.open-gift {
+  position: relative;
+  margin-top: 2.5rem;
+  padding: 1.05rem 2.6rem;
+  min-height: 56px;
+  border: none;
+  border-radius: 999px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  color: #fff;
+  background: linear-gradient(135deg, #c8306f, #9e0f2d);
+  box-shadow: 0 10px 30px rgba(158, 15, 45, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  animation: gift-pulse 2.6s ease-in-out infinite;
+}
+
+.open-gift:focus-visible {
+  outline: 3px solid #f2b73a;
+  outline-offset: 4px;
+}
+
+@keyframes gift-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(158, 15, 45, 0.35); }
+  50% { transform: scale(1.05); box-shadow: 0 14px 40px rgba(200, 48, 111, 0.5); }
+}
+
+.dawn-hint {
+  position: relative;
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #7a4a4a;
+}
+
+@keyframes rainbow-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* ===== Phần vườn hoa ===== */
+.spring {
+  background: #fde6c8;
+}
+
+/* phía trên dải mây là trời bình minh, không phải trời sao */
+.spring .cloud-bank {
+  background: linear-gradient(to bottom, #fde6c8 0, #f9e3d4 40%, #dcefff 62%, #9fd6ff 100%);
+}
+
+.spring .cloud-bank {
+  margin-bottom: -2px;
+}
+
+.spring .bank-cloud.row-0 {
+  filter: sepia(0.2) saturate(1.2) hue-rotate(-12deg) brightness(1.02);
+}
+
+.spring-title {
+  background: linear-gradient(90deg, #9e0f2d, #c8306f, #d4882a, #c8306f, #9e0f2d);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* đầu hoa: nở to, phủ kín */
+.head {
+  position: absolute;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 5px 8px rgba(80, 30, 40, 0.22));
+}
+
+.head-rose { left: -22%; top: -16%; width: 144%; }
+.head-peony { left: -30%; top: -22%; width: 160%; }
+.head-mum { left: -20%; top: -14%; width: 140%; }
+.head-lily { left: -26%; top: -18%; width: 152%; }
+.head-baby { left: -30%; bottom: 0; width: 160%; filter: none; }
+
+/* bụi lá phía sau */
+.bushes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  filter: blur(1.5px);
+}
+
+.bushes span {
+  position: absolute;
+  border-radius: 50% 50% 40% 40%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(140, 200, 110, 0.9) 0 18%, transparent 19%),
+    radial-gradient(circle at 70% 35%, rgba(120, 185, 95, 0.9) 0 16%, transparent 17%),
+    radial-gradient(circle at 50% 60%, #3f8a3a 0 40%, #2f6e2c 70%, transparent 71%);
+  animation: bush-sway 6s ease-in-out infinite alternate;
+  transform-origin: 50% 100%;
+}
+
+@keyframes bush-sway {
+  from { transform: translateX(-50%) skewX(-1.5deg); }
+  to { transform: translateX(-50%) skewX(1.5deg); }
+}
+
+/* ===== Lá thư: chữ to, rõ, dễ đọc ===== */
+.letter {
+  position: relative;
+  z-index: 3;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  text-align: center;
+}
+
+.line {
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.line.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.size-sm { font-size: clamp(1.2rem, 3.4vw, 1.35rem); }
+.size-md { font-size: clamp(1.3rem, 3.8vw, 1.55rem); color: #4f2a2a; }
+.size-lg { font-size: clamp(1.45rem, 4.4vw, 1.85rem); color: #43201f; font-weight: 500; }
+.size-xl { font-size: clamp(1.75rem, 5.4vw, 2.4rem); color: #3a1818; font-weight: 600; }
+.size-xxl { font-size: clamp(2rem, 6.4vw, 3rem); font-weight: 600; }
+
+.spring .size-md { color: #4f2a2a; }
+.spring .size-lg { color: #43201f; }
+
+.spring .line.special {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  background: linear-gradient(100deg, #9e0f2d, #c8306f 45%, #9e0f2d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.line.gold {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  background: linear-gradient(90deg, #a8641a, #e0a12e, #c8306f, #e0a12e, #a8641a);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.line.gold.visible {
+  animation: rainbow-flow 8s linear infinite;
+}
+
+.spring-card.letter {
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: 0 20px 60px rgba(158, 15, 45, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.signature {
+  margin-top: 2rem;
+  text-align: right;
+  color: #6b3434;
+  font-size: clamp(1.25rem, 3.6vw, 1.5rem);
+  font-style: italic;
+}
+
+.signature p {
+  margin: 0;
+}
+
+.sign-name {
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 3.6rem);
+  color: #9e0f2d;
+  line-height: 1.2;
+}
+
+.sign-date {
+  font-size: 1.05rem;
+  color: #8a5a5a;
+}
+
+/* ===== Nút nhạc nền ===== */
+.music-toggle {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(216, 180, 254, 0.35);
+  background: rgba(20, 14, 40, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.music-toggle:focus-visible {
+  outline: 2px solid #d8b4fe;
+  outline-offset: 3px;
+}
+
+.music-toggle .bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.music-toggle .bars i {
+  width: 3px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to top, #d78bff, #6ee7ff);
+  transition: height 0.3s ease;
+}
+
+.music-toggle.is-playing .bars i {
+  animation: eq 1s ease-in-out infinite;
+}
+.music-toggle.is-playing .bars i:nth-child(2) { animation-delay: -0.3s; }
+.music-toggle.is-playing .bars i:nth-child(3) { animation-delay: -0.6s; }
+.music-toggle.is-playing .bars i:nth-child(4) { animation-delay: -0.15s; }
+
+@keyframes eq {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.is-playing .bars i { animation: none; height: 12px; }
+}
+
+/* nút nhạc to hơn cho dễ bấm */
+.music-toggle {
+  width: 56px;
+  height: 56px;
+  background: rgba(158, 15, 45, 0.75);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.music-toggle .bars i {
+  width: 4px;
+  background: linear-gradient(to top, #ffd27a, #fff);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open-gift, .dawn-title, .dawn-sun, .bushes span { animation: none; }
+  .line { transition: none; opacity: 1; transform: none; }
+}
