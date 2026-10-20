@@ -1,8 +1,8 @@
-# Gửi Mẹ yêu · 20/10
+# Gửi Mom yêu · 20/10
 
-Trang web vườn hoa tặng Mẹ nhân ngày Phụ nữ Việt Nam 20/10.
+Trang web vườn hoa tặng Mom nhân ngày Phụ nữ Việt Nam 20/10.
 
-- Bìa trời bình minh, nút **Mở quà cho Mẹ** bay xuyên qua mây vào vườn hoa
+- Bìa trời bình minh, nút **Mở quà cho Mom** bay xuyên qua mây vào vườn hoa
 - Vườn hoa nhiều lớp: hồng, mẫu đơn, hoa ly, cúc vàng, hoa baby; đung đưa theo gió, chạm vào được
 - Lá thư chữ to, dễ đọc; nhạc nền có nút bật/tắt
 

@@ -93,11 +93,11 @@ export default function App() {
         </div>
         <p className="dawn-date">20 · 10</p>
         <h1 className="dawn-title">
-          Gửi Mẹ yêu
+          Gửi Mom yêu
         </h1>
         <p className="dawn-sub">Ngày Phụ nữ Việt Nam</p>
         <button type="button" className="open-gift" onClick={openGift}>
-          Mở quà cho Mẹ
+          Mở quà cho Mom
         </button>
         <p className="dawn-hint">hoặc cuộn xuống từ từ</p>
       </header>
@@ -136,7 +136,7 @@ export default function App() {
             </div>
             <h2 className="spring-title">
               Vườn hoa
-              <span>Đông tặng Mẹ</span>
+              <span>Đông tặng Mom</span>
             </h2>
           </div>
 
@@ -148,7 +148,7 @@ export default function App() {
                 <FadeLine key={i} text={l.text} size={l.size} special={l.special} gold={l.gold} />
               ))}
               <div className="signature">
-                <p>Thương Mẹ thật nhiều,</p>
+                <p>Thương Mom thật nhiều,</p>
                 <p className="sign-name">Đông</p>
                 <p className="sign-date">20 - 10 - 2026</p>
               </div>

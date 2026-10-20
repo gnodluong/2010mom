@@ -290,7 +290,7 @@ export default function Garden() {
         </div>
       ))}
 
-      <p className="garden-hint">Mẹ chạm vào hoa thử xem</p>
+      <p className="garden-hint">Mom chạm vào hoa thử xem</p>
     </div>
   );
 }
